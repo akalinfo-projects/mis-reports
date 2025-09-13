@@ -1,0 +1,15 @@
+FROM apache/superset:latest
+
+USER root
+
+COPY docker/pythonpath_dev/superset_config.py /app/docker/pythonpath_dev/superset_config.py
+
+RUN pip install --no-cache-dir requests psycopg2-binary
+RUN pip install authlib Flask-OAuthlib
+
+USER superset
+
+HEALTHCHECK CMD curl -f "http://localhost:8088/health"
+EXPOSE 8088
+
+CMD ["flask", "run", "--host=0.0.0.0", "--port=8088"]
