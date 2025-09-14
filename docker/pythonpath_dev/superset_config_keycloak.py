@@ -142,14 +142,14 @@ OAUTH_USER_INFO = {
 }   
 
 # Redirect URI
-OAUTH_REDIRECT_URI = "https://misuat.enam.gov.in/oauth-authorized/keycloak"
+OAUTH_REDIRECT_URI = "https://reports-uat.enam.gov.in/oauth-authorized/keycloak"
 
 
 # CORS Configuration
 ENABLE_CORS = True
 CORS_OPTIONS = {
     "supports_credentials": True,
-    "origins": ["https://misuat.enam.gov.in"],
+    "origins": ["https://reports-uat.enam.gov.in"],
 }
 
 
